@@ -1,0 +1,6 @@
+#!/bin/bash
+
+SVC=${2%.service}
+
+/etc/init.d/${SVC} ${1}
+
