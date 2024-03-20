@@ -28,7 +28,7 @@ services:
    ##################################################
     # RUN section
     ##################################################
-    image: unimock/prolife-docker:0.9.3
+    image: unimock/prolife-docker:0.9.6
     container_name: prolife
     restart: unless-stopped
     hostname: prolife
