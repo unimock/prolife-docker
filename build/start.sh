@@ -1,8 +1,14 @@
 #!/bin/bash
 
 echo "#################################################"
+
 echo "# starting container boot up script (start.sh)  #"
 echo "#################################################"
+
+echo "export APP_SMTP_SERVER=${APP_SMTP_SERVER}"  > /.env
+echo "export MYSQL_USER=${MYSQL_USER}"           >> /.env
+echo "export MYSQL_PASSWORD=${MYSQL_PASSWORD}"   >> /.env
+chmod a+r /.env
 
 list=$(ls -1 /etc/supervisor/boot.d/* 2>/dev/null)
 for i in $list ; do
@@ -26,6 +32,7 @@ done
 echo "#################################################"
 echo "# execute init scripts for enabled services"
 echo "#"
+
 
 list=$(ls -1 /etc/supervisor/init.d/* 2>/dev/null)
 for i in $list ; do
